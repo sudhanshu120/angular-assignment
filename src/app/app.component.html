@@ -1,10 +1,23 @@
-<div class="container">
-  <div class="my-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="container text-center card mt-3">
+  <h1 class="pt-2">GitHub Users Details</h1>
+  <div class="d-flex justify-content-center bg-body-secondary mt-2 br-4">
+    <div class="col-4 py-3">
+      <form [formGroup]="searchFrom">
+        <input type="text" class="form-control" formControlName="search" placeholder="Search...">
+      </form>
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <div class="row">
+    <div class="col-md-4 col-lg-3 py-2" *ngFor="let user of listUsers; let i = index">
+      <div class="card">
+        <img src="{{user.avatar_url}}" class="card-img-top" alt="user">
+        <div class="card-body">
+          <h5 class="card-title">#{{user.id}} - {{user.login}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
