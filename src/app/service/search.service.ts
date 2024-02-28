@@ -9,7 +9,7 @@ export class SearchService {
     constructor(private http: HttpClient) { }
 
     getUserData() {
-        const token = "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";
+        const token = "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";
         const headers = new HttpHeaders({
             "Accept": "application/vnd.github+json",
             "Authorization": `Bearer ${token}`,
@@ -22,7 +22,7 @@ export class SearchService {
     }
 
 searchUsers(query: string): Observable<any> {
-    const token = "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";
+    const token = "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";
     const headers = new HttpHeaders({
       "Authorization": `Bearer ${token}`,
       "X-GitHub-Api-Version": "2022-11-28"
